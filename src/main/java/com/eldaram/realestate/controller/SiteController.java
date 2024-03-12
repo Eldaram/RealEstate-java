@@ -39,7 +39,7 @@ public class SiteController {
         return "redirect:/admin";
     }
 
-    @DeleteMapping("/delete/{id}")
+    @GetMapping("/delete/{id}")
     public String delete(@PathVariable Integer id) {
         this.service.delete(id);
         return "redirect:/admin";
