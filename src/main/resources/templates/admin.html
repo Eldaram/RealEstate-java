@@ -9,26 +9,52 @@
 
 <div class="row">
     <div class="col-md-8">
-        <form class="mt-5" method="post" action="recupForm">
+        <form class="mt-5" method="post" action="create">
             <div class="form-group">
-                <label for="nom">Nom</label>
-                <input type="text" class="form-control" id="nom" name="nom" >
+                <label for="title">Title</label>
+                <input type="text" class="form-control" id="title" name="title" />
             </div>
             <div class="form-group">
-                <label for="prenom">Prénom</label>
-                <input type="text" class="form-control" id="prenom" name="prenom" >
+                <label for="price">Price</label>
+                <input type="number" class="form-control" id="price" name="price" />
             </div>
             <div class="form-group">
-                <label for="email">Email</label>
-                <input type="text" class="form-control" id="email" name="email" >
+                <label for="description">description</label>
+                <textarea type="text" class="form-control" id="description" name="description" ></textarea>
             </div>
             <div class="form-group">
-                <label for="email">Message</label>
-                <textarea rows="5" class="form-control" id="message" name="message" ></textarea>
+                <label for="city">City</label>
+                <input rows="5" class="form-control" id="city" name="city" />
             </div>
 
             <button type="submit" class="btn btn-primary mt-3">Submit</button>
         </form>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-8">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Title</th>
+                <th scope="col">Price</th>
+                <th scope="col">Description</th>
+                <th scope="col">City</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="estate : ${estateList}">
+                <th scope="row" th:text="${estate.id}"></th>
+                <td th:text="${estate.title}"></td>
+                <td th:text="${estate.price}"></td>
+                <td th:text="${estate.description}"></td>
+                <td th:text="${estate.city}"></td>
+            </tr>
+
+            </tbody>
+        </table>
     </div>
 </div>
 

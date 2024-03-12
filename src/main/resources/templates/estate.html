@@ -13,17 +13,19 @@
             <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Nom</th>
-                <th scope="col">Prenom</th>
-                <th scope="col">Message</th>
+                <th scope="col">Title</th>
+                <th scope="col">Price</th>
+                <th scope="col">Description</th>
+                <th scope="col">City</th>
             </tr>
             </thead>
             <tbody>
-            <tr th:each="contact : ${contactList}">
-                <th scope="row" th:text="${contact.id}"></th>
-                <td th:text="${contact.nom}"></td>
-                <td th:text="${contact.prenom}"></td>
-                <td th:text="${contact.message}"></td>
+            <tr th:each="estate : ${estateList}">
+                <th scope="row" th:text="${estate.id}"></th>
+                <td th:text="${estate.title}"></td>
+                <td th:text="${estate.price}"></td>
+                <td th:text="${estate.description}"></td>
+                <td th:text="${estate.city}"></td>
             </tr>
 
             </tbody>
