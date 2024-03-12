@@ -8,13 +8,17 @@
 
 </head>
 <body class="container">
-
+<a href="/">Return to the user view</a>
 <div class="row">
     <div class="col-md-8">
         <form class="mt-5" method="post" action="create">
             <div class="form-group">
                 <label for="title">Title</label>
                 <input type="text" class="form-control" id="title" name="title" />
+            </div>
+            <div class="form-group">
+                <label for="image">Image</label>
+                <input type="text" class="form-control" id="image" name="image" />
             </div>
             <div class="form-group">
                 <label for="price">Price</label>
@@ -51,7 +55,7 @@
             <tbody>
             <tr th:each="estate : ${estateList}">
                 <th scope="row" th:text="${estate.id}"></th>
-                <th scope="row"><a href="/" class="btn btn-info" role="button"><i class="bi bi-pencil"></i></a></th>
+                <th scope="row"><a th:href="@{'/edit/' + ${estate.id}}" class="btn btn-info" role="button"><i class="bi bi-pencil"></i></a></th>
                 <th scope="row"><a th:href="@{'/delete/' + ${estate.id}}" class="btn btn-info" role="button"><i class="bi bi-trash"></i></a></th>
                 <td th:text="${estate.title}"></td>
                 <td th:text="${estate.price}"></td>

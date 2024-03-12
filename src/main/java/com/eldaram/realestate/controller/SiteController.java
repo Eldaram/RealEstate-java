@@ -20,11 +20,25 @@ public class SiteController {
         return "estate";
     }
 
+    @GetMapping("/{id}")
+    public String card(@PathVariable Integer id, ModelMap map) {
+        Estate estate = this.service.getId(id);
+        map.put("estate", estate);
+        return "card";
+    }
+
     @GetMapping("/admin")
     public String admin(ModelMap map) {
         List<Estate> estates = this.service.findAll();
         map.put("estateList", estates);
         return "admin";
+    }
+
+    @GetMapping("/edit/{id}")
+    public String edit(@PathVariable Integer id, ModelMap map) {
+        Estate estate = this.service.getId(id);
+        map.put("estate", estate);
+        return "edit";
     }
 
     @PostMapping("/create")

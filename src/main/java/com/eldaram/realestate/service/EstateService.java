@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class EstateService {
@@ -17,12 +18,7 @@ public class EstateService {
     }
 
     public Estate update(Estate estateUpdate) { // UPDATE
-        Estate estate = repository.findById(estateUpdate.getId()).get();
-        estate.setTitle(estateUpdate.getTitle());
-        estate.setPrice(estateUpdate.getPrice());
-        estate.setDescription(estateUpdate.getDescription());
-        estate.setCity(estateUpdate.getCity());
-        return estate;
+        return repository.save(estateUpdate);
     }
 
     public void delete(Integer id) { // DELETE
@@ -31,5 +27,10 @@ public class EstateService {
 
     public List<Estate> findAll() { // SELECT
         return repository.findAll();
+    }
+
+    public Estate getId(Integer id) {
+        Optional<Estate> estate = repository.findById(id);
+        return estate.orElse(null);
     }
 }

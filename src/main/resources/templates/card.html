@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Card</title>
+</head>
+<body>
+<a href="/">Return to all</a>
+
+<div>
+    <img th:src="${estate.image}" alt="card image"/>
+    <h2 th:text="${estate.title}"></h2>
+    <p th:text="${estate.price}"></p>
+    <p th:text="${estate.description}"></p>
+    <p th:text="${estate.city}"></p>
+</div>
+</body>
+</html>

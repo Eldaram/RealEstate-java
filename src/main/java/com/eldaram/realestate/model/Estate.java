@@ -12,6 +12,7 @@ public class Estate {
     private Integer id;
 
     private String title;
+    private String image;
     private Integer price;
     private String description;
     private String city;
