@@ -15,5 +15,11 @@ public class Estate {
     private String image;
     private Integer price;
     private String description;
+    private String address_line;
+    private String zip_code;
     private String city;
+    private String rental_charges;
+
+    @ManyToOne
+    private Client client;
 }
